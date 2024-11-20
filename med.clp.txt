@@ -1,0 +1,34 @@
+% Symptoms for conditions
+symptom(flu, fever).
+symptom(flu, cough).
+symptom(flu, sore_throat).
+symptom(flu, fatigue).
+symptom(flu, body_aches).
+
+symptom(migraine, headache).
+symptom(migraine, nausea).
+symptom(migraine, sensitivity_to_light).
+symptom(migraine, sensitivity_to_sound).
+symptom(migraine, visual_disturbances).
+
+symptom(allergies, sneezing).
+symptom(allergies, runny_nose).
+symptom(allergies, itchy_eyes).
+symptom(allergies, rash).
+symptom(allergies, nasal_congestion).
+
+% Rules for diagnosing conditions
+diagnosis(flu) :-
+    symptom(flu, fever),
+    symptom(flu, cough),
+    symptom(flu, sore_throat).
+
+diagnosis(migraine) :-
+    symptom(migraine, headache),
+    symptom(migraine, sensitivity_to_light),
+    symptom(migraine, sensitivity_to_sound).
+
+diagnosis(allergies) :-
+    symptom(allergies, sneezing),
+    symptom(allergies, runny_nose),
+    symptom(allergies, itchy_eyes).
